@@ -1,0 +1,45 @@
+{
+  "Comment": "Fluxo de Processamento de Pedidos Online",
+  "StartAt": "ValidarPedido",
+  "States": {
+    "ValidarPedido": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:validar-pedido",
+      "Next": "ProcessarPagamento"
+    },
+    "ProcessarPagamento": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.pagamentoAprovado",
+          "BooleanEquals": true,
+          "Next": "RegistrarPedido"
+        }
+      ],
+      "Default": "ErroPagamento"
+    },
+    "RegistrarPedido": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:registrar-pedido",
+      "Next": "AtualizarSistemas"
+    },
+    "AtualizarSistemas": {
+      "Type": "Parallel",
+      "Branches": [
+        { "StartAt": "SincronizarEC2", "States": { "SincronizarEC2": { "Type": "Task", "Resource": "arn:aws:ec2:sync", "End": true } } },
+        { "StartAt": "EnviarLogs", "States": { "EnviarLogs": { "Type": "Task", "Resource": "arn:aws:s3:logs", "End": true } } }
+      ],
+      "Next": "NotificarCliente"
+    },
+    "NotificarCliente": {
+      "Type": "Task",
+      "Resource": "arn:aws:sns:notificar",
+      "End": true
+    },
+    "ErroPagamento": {
+      "Type": "Task",
+      "Resource": "arn:aws:sns:falha-pagamento",
+      "End": true
+    }
+  }
+}
