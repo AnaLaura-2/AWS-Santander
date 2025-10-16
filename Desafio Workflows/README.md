@@ -184,7 +184,7 @@ Todas as transições e logs ficam disponíveis no AWS Step Functions Console pa
 
 Para conferir o código JSON completo acesse o arquivo [clicando aqui.](Pedidos_Online.json)
 
-### Conclusâo:
+### Conclusão:
 
 Este projeto demonstra como a AWS Step Functions pode coordenar diversos serviços da AWS para automatizar o processamento de pedidos em uma arquitetura serverless, segura e escalável.
 Servindo como base para soluções reais de e-commerce e pipelines empresariais.
