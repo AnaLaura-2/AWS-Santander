@@ -176,7 +176,7 @@ Todas as transições e logs ficam disponíveis no AWS Step Functions Console pa
   <img src="Pedidos_online_json.jpg" alt="Pedidos Online Json" width="800" height="300"/>
 </p>
 
-Para conferir o códifo JSON completo acesse o arquivo [clicando aqui.](Pedidos_Online.json)
+Para conferir o código JSON completo acesse o arquivo [clicando aqui.](Pedidos_Online.json)
 
 ### Conclusâo:
 
