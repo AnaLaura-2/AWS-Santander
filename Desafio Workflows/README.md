@@ -7,19 +7,21 @@
 O AWS Step Functions é um serviço que permite criar workflows automatizados e visuais para aplicações distribuídas.
 Ele coordena diferentes serviços da AWS por meio de uma máquina de estados, definida em Amazon States Language (JSON), eliminando a necessidade de escrever lógica de orquestração manual.
 
+### Principais Caracteristícas:
+
+**Desenvolvimento Simplificado (Low-Code):** Permite construir aplicações complexas com pouca ou nenhuma codificação manual, agilizando o processo de desenvolvimento.
+
+**Interface Visual Intuitiva:** O console do AWS Step Functions oferece um diagrama de fluxo que facilita a visualização, o monitoramento e a depuração da lógica da sua aplicação de ponta a ponta.
+
+**Arquitetura Serverless:** Elimina a necessidade de gerenciar servidores. A AWS cuida de toda a infraestrutura, e a cobrança é feita apenas pela execução dos seus fluxos de trabalho.
+
+**Aceleração do Desenvolvimento:** Reduz significativamente o código necessário para orquestrar as tarefas da sua aplicação, resultando em economia de tempo e recursos.
+
+**Integração Profunda com a AWS:** Conecta-se de forma nativa a uma vasta gama de serviços da AWS, como Lambda, SQS, EC2, SNS e DynamoDB, simplificando a criação de fluxos de trabalho distribuídos.
+
 Cada etapa é chamada de state, e pode executar ações (via Lambda, ECS, DynamoDB, etc.), fazer escolhas condicionais ou lidar com falhas automaticamente.
 
 ---
-
-### Objetivos de aprendizagem:
-
-- Aplicar os conceitos aprendidos em um ambiente prático;
-
-- Compreender o funcionamento do AWS Step Functions como orquestrador de serviços;
-
-- Documentar processos técnicos de forma clara e estruturada;
-
-- Utilizar o GitHub como ferramenta de versionamento e documentação técnica.
 
 ### Tecnologias e ferramentas:
 
@@ -39,6 +41,8 @@ Cada etapa é chamada de state, e pode executar ações (via Lambda, ECS, Dynamo
 
 - GitHub + Markdown – Documentação e versionamento do projeto.
 
+---
+
 ### Estrutura e Conceitos Fundamentais
 
 O Step Functions é construído com base em dois elementos principais:
@@ -47,9 +51,9 @@ O Step Functions é construído com base em dois elementos principais:
 
 - Estados (States) — cada passo dentro do fluxo é considerado um estado, definido por meio da Amazon States Language (ASL), uma linguagem baseada em JSON.
 
-Esses estados podem ser de dois tipos principais:
+### Tipos de estados:
 
-**Estados de Fluxo (Flow States), controlam o comportamento e a sequência de execução das etapas:**
+ **1- Estados de Fluxo (Flow States), controlam o comportamento e a sequência de execução das etapas:**
 
 - Choice State → Define condições e caminhos diferentes no fluxo.
 
@@ -59,9 +63,11 @@ Esses estados podem ser de dois tipos principais:
 
 - Parallel State → Cria execuções paralelas independentes.
 
-**Estados de Tarefa (Task States):**
+**2- Estados de Tarefa (Task States):**
 
 Representam ações específicas realizadas por outros serviços AWS, como chamadas a funções Lambda, gravações no DynamoDB ou envios de mensagens via SNS.
+
+---
 
 ### Exemplo de Funcionamento do AWS Step Functions
 
@@ -178,7 +184,7 @@ Todas as transições e logs ficam disponíveis no AWS Step Functions Console pa
 
 Para conferir o código JSON completo acesse o arquivo [clicando aqui.](Pedidos_Online.json)
 
-### Conclusâo:
+### Conclusão:
 
 Este projeto demonstra como a AWS Step Functions pode coordenar diversos serviços da AWS para automatizar o processamento de pedidos em uma arquitetura serverless, segura e escalável.
 Servindo como base para soluções reais de e-commerce e pipelines empresariais.
