@@ -1,0 +1,34 @@
+# Template Desafio DIO - Nivel 2 (S3 + SNS)
+# Foco: Orquestrar dois servicos diferentes e documentar o processo.
+
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: >-
+  Meu template CloudFormation aprimorado.
+  Este template cria um Bucket S3 e um Topico de Notificacao SNS.
+  A ideia eh que o topico possa ser usado para enviar um alerta
+  quando novos arquivos chegarem no bucket.
+
+Resources:
+  # 1. Bucket S3 (para guardar arquivos)
+  MeuPrimeiroBucket:
+    Type: AWS::S3::Bucket
+    # Essa politica eh uma boa pratica para nao apagar o bucket sem querer.
+    DeletionPolicy: Retain
+
+  # 2. Topico de Notificacao (para enviar alertas)
+  MeuTopicoDeAlertas:
+    Type: AWS::SNS::Topic
+    # O 'DisplayName' eh o nome que aparece nos alertas, como e-mails ou SMS.
+    Properties:
+      DisplayName: Alertas-Desafio-DIO
+      TopicName: topico-desafio-codegirls
+
+Outputs:
+  NomeDoMeuBucket:
+    Description: O nome unico do Bucket S3 que foi criado.
+    Value: !Ref MeuPrimeiroBucket
+
+  NomeDoMeuTopico:
+    Description: O ARN (nome completo) do Topico SNS criado.
+    Value: !Ref MeuTopicoDeAlertas

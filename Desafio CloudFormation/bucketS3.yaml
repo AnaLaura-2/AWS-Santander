@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Template CloudFormation para criação de um bucket S3 com versionamento habilitado.
+
+Resources:
+  MeuBucketS3:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: meu-bucket-desafio-cloudformation
+      VersioningConfiguration:
+        Status: Enabled
+      Tags:
+        - Key: Projeto
+          Value: Desafio-DIO-CloudFormation
+        - Key: Ambiente
+          Value: Desenvolvimento
+
+Outputs:
+  NomeDoBucket:
+    Description: Nome do bucket criado
+    Value: !Ref MeuBucketS3
