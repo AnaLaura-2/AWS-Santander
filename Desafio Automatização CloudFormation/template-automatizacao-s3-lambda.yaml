@@ -1,0 +1,70 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: |
+  Desafio DIO - Infraestrutura Automatizada (S3-Lambda).
+  Este template cria um Bucket S3 e uma Funcao Lambda.
+  A conexao eh feita de forma segura para evitar dependencias circulares.
+
+Resources:
+  # 1. O Role (Permissao) que a Lambda vai usar
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  # 2. O Bucket S3 que vai receber os arquivos
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${AWS::StackName}-bucket-${AWS::AccountId}"
+      NotificationConfiguration:
+        LambdaConfigurations:
+          - Event: 's3:ObjectCreated:*'
+            Function: !GetAtt LambdaFunction.Arn
+    DeletionPolicy: Retain
+    # O Bucket DEVE esperar que a permissao seja criada primeiro.
+    DependsOn: LambdaPermission
+
+  # 3. A Funcao Lambda que sera acionada
+  LambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Runtime: python3.11
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Code:
+        ZipFile: |
+          import json
+          import urllib.parse
+
+          def handler(event, context):
+              bucket = event['Records'][0]['s3']['bucket']['name']
+              key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'], encoding='utf-8')
+              print(f"Evento recebido! O arquivo {key} foi adicionado ao bucket {bucket}.")
+              return {
+                  'statusCode': 200,
+                  'body': json.dumps(f"Arquivo {key} processado com sucesso.")
+              }
+
+  # 4. A Permissao que o S3 precisa para "chamar" a Lambda
+  LambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName: !GetAtt LambdaFunction.Arn
+      Principal: s3.amazonaws.com
+      SourceArn: !Sub "arn:aws:s3:::${AWS::StackName}-bucket-${AWS::AccountId}"
+    # A permissao so depende da funcao Lambda
+    DependsOn: LambdaFunction
+
+Outputs:
+  BucketName:
+    Description: Nome do Bucket S3 criado. Faca upload de arquivos aqui.
+    Value: !Ref S3Bucket
