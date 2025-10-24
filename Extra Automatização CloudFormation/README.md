@@ -1,14 +1,14 @@
 # AWS-Santander
 
-## Desafio: Implementar uma Infraestrutura Automatizada com AWS CloudFormation
+## Extra: Implementar uma Infraestrutura Automatizada em Nuvem com AWS CloudFormation
 
-> Implementar uma infraestrutura automatizada com AWS CloudFormation, contendo anotações e insights adquiridos durante a prática, servindo como material de apoio para estudos e futuras implementações.
+> Implementar uma infraestrutura automatizada em nuvem com AWS CloudFormation, servindo como material de apoio para estudos e futuras implementações.
 
 ---
 
 ###  Descrição do Projeto:
 
-Este projeto demonstra a criação de uma **infraestrutura automatizada e orientada a eventos** na AWS, utilizando o CloudFormation como ferramenta de Infraestrutura como Código (IaC).
+Este projeto demonstra a criação de uma **infraestrutura automatizada e orientada a eventos**, utilizando o CloudFormation como ferramenta de Infraestrutura como Código (IaC).
 
 A solução implementa um dos padrões de arquitetura mais comuns e fundamentais da nuvem: um fluxo de trabalho **S3 -> Lambda**. Um Bucket S3 é configurado para, ao receber um novo arquivo, acionar automaticamente uma função Lambda para processamento. O CloudFormation é responsável por provisionar não apenas os recursos, mas também as permissões e a "cola" (configuração de evento) que os conectam.
 

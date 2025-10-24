@@ -1,0 +1,20 @@
+[
+  {
+    "id": "NF-001",
+    "cliente": "Empresa A",
+    "valor": 1500.75,
+    "data_emissao": "2025-10-14"
+  },
+  {
+    "id": "NF-002",
+    "cliente": "Empresa B",
+    "valor": 320.50,
+    "data_emissao": "2025-10-13"
+  },
+  {
+    "id": "NF-003",
+    "cliente": "Empresa C",
+    "valor": 899.00,
+    "data_emissao": "2025-10-14"
+  }
+]

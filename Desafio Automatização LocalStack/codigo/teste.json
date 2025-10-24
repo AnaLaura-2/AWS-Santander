@@ -1,0 +1,4 @@
+[
+    { "id": "NF-101", "cliente": "Empresa A", "valor": 1500.75, "data_emissao": "2025-09-23" },
+    { "id": "NF-102", "cliente": "Empresa B", "valor": 320.50, "data_emissao": "2025-09-22" }
+]
