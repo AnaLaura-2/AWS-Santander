@@ -9,7 +9,11 @@ Este repositório contém os desafios realizados como parte do curso **AWS Santa
 - 📘 [Desafio EC2 – ver README](./Desafio%20EC2/README.md)
 - 📘 [Desafio Workflows – ver README](./Desafio%20Workflows/README.md)
 - 📘 [Desafio CloudFormation – ver README](./Desafio%20CloudFormation/README.md)
+<<<<<<< HEAD
 - 📘 [Extra Automatização CloudFormation – ver README](./Extra%20Automatização%20CloudFormation/README.md)
+=======
+- 📘 [Desafio Automatização CloudFormation – ver README](./Desafio%20Automatização%20CloudFormation/README.md)
+>>>>>>> 15b32676fecbc9aec0ed739afff2f19e1e5d1fad
 
 ---
 
