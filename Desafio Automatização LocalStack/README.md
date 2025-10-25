@@ -72,7 +72,7 @@ Todo o provisionamento da arquitetura foi executado via terminal no VSCode, util
   <img src="docker.png" alt="Start Docker" width="500" height="300"/>
 </p>
 
-#### 2. O segundo passo foi iniciar o contêiner do LocalStack em modo detached para que todos os serviços da AWS estivessem disponíveis localmente.
+#### 2. O segundo passo instalar a LocalStack (`pip install localstack`) e iniciar o contêiner do LocalStack em modo detached para que todos os serviços da AWS estivessem disponíveis localmente.
 
 `localstack start -d`
 
