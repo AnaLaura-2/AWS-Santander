@@ -9,6 +9,7 @@ Este repositório contém os desafios realizados como parte do curso **AWS Santa
 - 📘 [Desafio EC2 – ver README](./Desafio%20EC2/README.md)
 - 📘 [Desafio Workflows – ver README](./Desafio%20Workflows/README.md)
 - 📘 [Desafio CloudFormation – ver README](./Desafio%20CloudFormation/README.md)
+- 📘 [Desafio Infraestrutura Automatizado – ver README](./Desafio%20Infraestrutura%20Automatizado/README.md)
 - 📘 [Desafio Automatização LocalStack – ver README](./Desafio%20Automatização%20LocalStack/README.md)
 - 📘 [Extra Automatização CloudFormation – ver README](./Extra%20Automatização%20CloudFormation/README.md)
 
@@ -26,5 +27,5 @@ Este repositório contém os desafios realizados como parte do curso **AWS Santa
 ## ✅ Como usar este repositório
 
 1. Clique na pasta do desafio que deseja visualizar.
-2. Dentro da pasta, acesse arquivos como readme.me (que possui os desafios) e em seus complementares como drwaio, jpg, jason, etc.
+2. Dentro da pasta, acesse arquivos como readme.me (que possui os desafios) e em seus complementares como drwaio, jpg, json, etc.
 3. Consulte o material para estudo, referência ou prática.
