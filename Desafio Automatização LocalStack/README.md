@@ -1,8 +1,8 @@
 # AWS-Santander
 
-## Desafio: Implementação uma Infraestrutura Automatizada com AWS CloudFormation
+## Desafio: Executando uma Infraestrutura Automatizada com AWS CloudFormation
 
-> Implementação uma infraestrutura automatizada com AWS CloudFormation e LocalStack, servindo como material de apoio para estudos e futuras implementações.
+> Executando uma infraestrutura automatizada com AWS CloudFormation e LocalStack, servindo como material de apoio para estudos e futuras implementações.
 
 ---
 
