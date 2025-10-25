@@ -44,7 +44,7 @@ Persistência no DynamoDB: Após extrair os dados relevantes da nota fiscal (com
 
 3. Execução do Teste:
 
-- Um arquivo de exemplo (ex: `nota-fiscal-001.json`) foi enviado para o Bucket S3 via AWS CLI (`aws s3 cp ...`).
+- Um arquivo de exemplo (ex: `notas_fiscais.json`) foi enviado para o Bucket S3 via AWS CLI (`aws s3 cp ...`).
 
 - O S3 (LocalStack) detectou o evento `s3:ObjectCreated:*` e acionou automaticamente a função Lambda.
 
