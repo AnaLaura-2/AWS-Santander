@@ -116,7 +116,6 @@ Ao final de todos os testes, o ambiente LocalStack foi desligado para liberar os
 <p align="center">
   <img src="teste2.png" alt="Teste" width="300" height="500"/>
 </p>
-
 ### Conclusão:
 
 A conclusão deste projeto valida habilidades essenciais em arquitetura de nuvem AWS. Fui capaz de provisionar, configurar e integrar três serviços distintos (S3, Lambda e DynamoDB) usando apenas o AWS CLI. O uso do LocalStack e Docker foi fundamental para criar um ambiente de desenvolvimento e testes local, seguro e sem custos, provando ser uma ferramenta indispensável para o ciclo de desenvolvimento serverless. O sucesso do teste de ingestão de dados demonstra o domínio sobre gatilhos, permissões (IAM) e a manipulação de dados entre serviços.
